@@ -1,9 +1,6 @@
 
 # Telegram Stream Downloader
 
--1002442764497
-
-
 ## Aviso LEGAL / DISCLAIMER
 
 ## Contribuições
