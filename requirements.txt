@@ -1,0 +1,8 @@
+pyrofork
+colorama
+pyfiglet
+random
+tqdm 
+asyncio
+tgcrypto
+halo
