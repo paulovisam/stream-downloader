@@ -70,7 +70,6 @@ def get_cleaned_file_path(file_name, module_dir):
         .replace("\n", "")
         .strip()
     )
-    # file_name = re.sub(r"#[A-Z]\d+\s*", "", file_name)
     file_name = re.sub(r"#\w+\s*", "", file_name)
     return os.path.join(module_dir, file_name)
 
@@ -82,9 +81,9 @@ def parse_summary(summary_message):
     current_module = None
 
     for line in summary_message.split("\n"):
-        if line.startswith("="):  # Cabeçalho do módulo
+        if line.startswith("="):  
             current_module = line.strip("= ").strip()
-        elif line.startswith("#"):  # Hashtags
+        elif line.startswith("#"):  
             if current_module:
                 hashtags = re.findall(r"#\w\d+", line)
                 modules[current_module].extend(hashtags)
@@ -142,7 +141,7 @@ async def download_videos(
                     if message.caption
                     else f"video_{message.video.file_id}.mp4"
                 )
-                file_name = get_cleaned_file_path(file_name, module_dir)
+                file_name = get_cleaned_file_path(file_name, module_dir) +".mp4"
 
                 utils.clear()
                 with tqdm(
