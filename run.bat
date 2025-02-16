@@ -1,4 +1,4 @@
 call ..\.venv\scripts\activate
-python vidsender.py
+python main.py
 cmd /k
 pause
